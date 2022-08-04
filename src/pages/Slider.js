@@ -1,34 +1,63 @@
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const Skip = ({...props}) => (
   <TouchableOpacity {...props} activeOpacity={0.8}>
-    <Text style={{color: '#000', fontSize: 16.5, marginLeft: 15}}>Skip</Text>
+    <Text
+      style={{
+        color: '#000',
+        fontSize: hp(2.4),
+        marginLeft: wp(3),
+        fontFamily: 'RobotoCondensed-Regular',
+      }}>
+      Skip
+    </Text>
   </TouchableOpacity>
 );
 
 const Next = ({...props}) => (
   <TouchableOpacity {...props} activeOpacity={0.8}>
-    <Text style={{color: '#000', fontSize: 16.5, marginRight: 15}}>Next</Text>
+    <Text
+      style={{
+        color: '#000',
+        fontSize: hp(2.4),
+        marginRight: wp(3),
+        fontFamily: 'RobotoCondensed-Regular',
+      }}>
+      Next
+    </Text>
   </TouchableOpacity>
 );
 
 const Done = ({...props}) => (
   <TouchableOpacity {...props} activeOpacity={0.8}>
-    <Text style={{color: '#', fontSize: 16.5, marginRight: 15}}>Done</Text>
+    <Text
+      style={{
+        color: '#000',
+        fontSize: hp(2.4),
+        marginRight: wp(3),
+        fontFamily: 'RobotoCondensed-Regular',
+      }}>
+      Done
+    </Text>
   </TouchableOpacity>
 );
 
 const Dots = ({selected}) => {
   let backgroundColor;
-  backgroundColor = selected ? 'rgba(0,0,0,0.6)' : 'rgba(0,0,0,0.3)';
+  backgroundColor = selected ? 'rgba(0,0,0,0.7)' : 'rgba(0,0,0,0.2)';
   return (
     <View
       style={{
-        width: 35,
-        height: 3,
-        marginHorizontal: 3,
+        width: wp(2),
+        height: wp(2),
+        borderRadius: wp(2),
+        marginHorizontal: 4,
         backgroundColor,
       }}
     />
@@ -45,46 +74,76 @@ const Slider = ({navigation}) => {
       DotComponent={Dots}
       pages={[
         {
-          backgroundColor: 'red',
+          backgroundColor: '#FFCC59',
           image: (
             <Image
-              resizeMode="contain"
-              style={{width: 350, height: 350}}
-              source={require('../../assets/images/luffy.png')}
+              style={{
+                width: wp(100),
+                height: wp(100),
+              }}
+              source={require('../../assets/images/Shopping.png')}
             />
           ),
-          title: 'Page 1',
-          subtitle: 'Done with React Native Onboarding Swiper',
-          titleStyles: {color: '#000'},
-          subTitleStyles: {color: '#000'},
+          title: 'ONLINE SHOPPING',
+          subtitle: 'It is now very easy to reach the best quality among all',
+          titleStyles: {
+            color: '#000',
+            fontSize: wp(9),
+            fontFamily: 'RobotoCondensed-Bold',
+          },
+          subTitleStyles: {
+            color: '#000',
+            marginBottom: hp(8.5),
+            width: wp(70),
+            fontSize: wp(4.3),
+            fontFamily: 'RobotoCondensed-Regular',
+          },
         },
         {
-          backgroundColor: 'green',
+          backgroundColor: '#BFEAF5',
           image: (
             <Image
-              resizeMode="contain"
-              style={{width: 350, height: 350}}
-              source={require('../../assets/images/zoro.png')}
+              style={{width: wp(100), height: wp(100)}}
+              source={require('../../assets/images/addCart.png')}
             />
           ),
-          title: 'Page 2',
-          subtitle: 'Done with React Native Onboarding Swiper',
-          titleStyles: {color: '#000'},
-          subTitleStyles: {color: '#000'},
+          title: 'ADD TO CART',
+          subtitle: 'It is now very easy to reach the best quality among all',
+          titleStyles: {
+            color: '#000',
+            fontSize: wp(9),
+            fontFamily: 'RobotoCondensed-Bold',
+          },
+          subTitleStyles: {
+            color: '#000',
+            marginBottom: hp(8.5),
+            width: wp(70),
+            fontSize: wp(4.3),
+            fontFamily: 'RobotoCondensed-Regular',
+          },
         },
         {
-          backgroundColor: 'yellow',
+          backgroundColor: '#F1B1CB',
           image: (
             <Image
-              resizeMode="contain"
-              style={{width: 350, height: 350}}
-              source={require('../../assets/images/sanji.png')}
+              style={{width: wp(100), height: wp(100)}}
+              source={require('../../assets/images/OrderComplete.png')}
             />
           ),
-          title: 'Page 3',
-          subtitle: 'Done with React Native Onboarding Swiper',
-          titleStyles: {color: '#000'},
-          subTitleStyles: {color: '#000'},
+          title: 'ORDER COMPLETE',
+          subtitle: 'It is now very easy to reach the best quality among all',
+          titleStyles: {
+            color: '#000',
+            fontSize: wp(9),
+            fontFamily: 'RobotoCondensed-Bold',
+          },
+          subTitleStyles: {
+            color: '#000',
+            marginBottom: hp(8.5),
+            width: wp(70),
+            fontSize: wp(4.3),
+            fontFamily: 'RobotoCondensed-Regular',
+          },
         },
       ]}
     />

@@ -8,44 +8,36 @@ import HomeScreen from '../../pages/Home';
 import SliderScreen from '../../pages/Slider';
 
 //utils
-// import {appStorage} from '../../utils';
+import {appStorage} from '../../utils/appStorage';
 
 const Stack = createNativeStackNavigator();
 
 const AuthStack = () => {
-  // const [isFirstLaunch, setIsFirstLaunch] = useState(null);
+  const [isFirstLaunch, setIsFirstLaunch] = useState(null);
 
-  // useEffect(() => {
-  //   appStorage.getItem('@launch').then(value => {
-  //     if (value === null) {
-  //       appStorage.setItem('@launch', 'true');
-  //       setIsFirstLaunch(true);
-  //     } else {
-  //       setIsFirstLaunch(false);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    const value = appStorage.getItem('@launch.state');
+    if (value === undefined) {
+      appStorage.setItem('@launch.state', 'true');
+      setIsFirstLaunch(true);
+    } else {
+      setIsFirstLaunch(false);
+    }
+  }, []);
 
-  // if (isFirstLaunch === null) {
-  //   return null;
-  // } else if (isFirstLaunch === true) {
-  //   return (
-  //     <Stack.Navigator screenOptions={{headerShown: false}}>
-  //       <Stack.Screen name="Slider" component={SliderScreen} />
-  //       <Stack.Screen name="Home" component={HomeScreen} />
-  //       <Stack.Screen name="Dashboard" component={DashboardScreen} />
-  //     </Stack.Navigator>
-  //   );
-  // } else {
-  //   return <HomeScreen />;
-  // }
-  return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Slider" component={SliderScreen} />
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Dashboard" component={DashboardScreen} />
-    </Stack.Navigator>
-  );
+  if (isFirstLaunch === null) {
+    return null;
+  } else if (isFirstLaunch === true) {
+    return (
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Slider" component={SliderScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+      </Stack.Navigator>
+    );
+  } else {
+    return <HomeScreen />;
+  }
 };
 
 export default AuthStack;
