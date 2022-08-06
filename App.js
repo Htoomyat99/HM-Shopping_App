@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import {View, Text} from 'react-native';
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';

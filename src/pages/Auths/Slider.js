@@ -66,8 +66,8 @@ const Dots = ({selected}) => {
 const Slider = ({navigation}) => {
   return (
     <Onboarding
-      onSkip={() => navigation.replace('Home')}
-      onDone={() => navigation.navigate('Home')}
+      onSkip={() => navigation.replace('Login')}
+      onDone={() => navigation.replace('Login')}
       SkipButtonComponent={Skip}
       NextButtonComponent={Next}
       DoneButtonComponent={Done}
@@ -81,7 +81,7 @@ const Slider = ({navigation}) => {
                 width: wp(100),
                 height: wp(100),
               }}
-              source={require('../../assets/images/Shopping.png')}
+              source={require('../../../assets/images/Shopping.png')}
             />
           ),
           title: 'ONLINE SHOPPING',
@@ -104,7 +104,7 @@ const Slider = ({navigation}) => {
           image: (
             <Image
               style={{width: wp(100), height: wp(100)}}
-              source={require('../../assets/images/addCart.png')}
+              source={require('../../../assets/images/addCart.png')}
             />
           ),
           title: 'ADD TO CART',
@@ -127,7 +127,7 @@ const Slider = ({navigation}) => {
           image: (
             <Image
               style={{width: wp(100), height: wp(100)}}
-              source={require('../../assets/images/OrderComplete.png')}
+              source={require('../../../assets/images/OrderComplete.png')}
             />
           ),
           title: 'ORDER COMPLETE',

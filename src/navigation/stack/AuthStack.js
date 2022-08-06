@@ -3,9 +3,9 @@ import React, {useState, useEffect} from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 //pages
-import DashboardScreen from '../../pages/Dashboard';
-import HomeScreen from '../../pages/Home';
-import SliderScreen from '../../pages/Slider';
+import RegisterScreen from '../../pages/Auths/Register';
+import LoginScreen from '../../pages/Auths/Login';
+import SliderScreen from '../../pages/Auths/Slider';
 
 //utils
 import {appStorage} from '../../utils/appStorage';
@@ -31,12 +31,17 @@ const AuthStack = () => {
     return (
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Slider" component={SliderScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
       </Stack.Navigator>
     );
   } else {
-    return <HomeScreen />;
+    return (
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+      </Stack.Navigator>
+    );
   }
 };
 
