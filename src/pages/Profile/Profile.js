@@ -1,10 +1,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-import ProfileContent from '../../components/Profile/ProfileContent';
-
 const Profile = () => {
-  return <ProfileContent />;
+  return (
+    <View>
+      <Text>Profile</Text>
+    </View>
+  );
 };
 
 export default Profile;
