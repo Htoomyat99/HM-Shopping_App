@@ -10,10 +10,12 @@ import {appStorage} from '../utils/appStorage';
 
 const AppNavigator = () => {
   const [lang, setLang] = useState(null);
-  const [authen, setAuthen] = useState(true);
+  const [authen, setAuthen] = useState(null);
+  const [userInfo, setUserInfo] = useState(null);
 
   const context = {
     lang,
+    userInfo,
     authen,
     getAuthen: value => {
       setAuthen(value);
@@ -21,13 +23,32 @@ const AppNavigator = () => {
     getLang: value => {
       setLang(value);
     },
+    getUserInfo: value => {
+      setUserInfo(value);
+    },
   };
 
   useEffect(() => {
-    setLang(appStorage.getItem('@language'));
+    getData();
   }, []);
 
-  if (authen === true) {
+  const getData = () => {
+    try {
+      const token = appStorage.getItem('@user.token');
+      const userData = appStorage.getItem('@user.data');
+      const storeLang = appStorage.getItem('@language');
+      setLang(storeLang);
+      if (token) {
+        setAuthen(false);
+        setUserInfo(userData ? JSON.parse(userData) : '');
+      }
+    } catch (error) {
+      console.log('error', error);
+      setAuthen(true);
+    }
+  };
+
+  if (authen) {
     return (
       <AuthContext.Provider value={context}>
         <NavigationContainer>

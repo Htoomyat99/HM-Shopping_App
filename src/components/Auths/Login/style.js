@@ -6,28 +6,24 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
     flex: 1,
   },
   bgImage: {
-    width: wp(100),
-    height: hp(100),
+    flex: 1,
   },
   imageContainer: {
     height: hp(43),
     alignItems: 'center',
-    borderBottomWidth: wp(0.2),
-    borderBottomColor: '#ccc',
   },
   image: {
-    width: wp(90),
-    height: wp(90),
+    width: wp(100),
+    height: wp(100),
   },
   textContainer: {
     height: hp(57),
   },
   emailBox: {
-    marginTop: hp(5),
+    marginTop: hp(6),
     width: wp(85),
     alignSelf: 'center',
   },
@@ -82,6 +78,14 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoCondensed-Regular',
     fontSize: wp(4),
     marginHorizontal: wp(1),
+    letterSpacing: wp(0.2),
+  },
+  Text: {
+    fontFamily: 'RobotoCondensed-Regular',
+    fontSize: wp(4),
+    marginHorizontal: wp(1),
+    letterSpacing: wp(0.2),
+    color: '#01D201',
   },
 });
 

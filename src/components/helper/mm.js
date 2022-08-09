@@ -1,4 +1,15 @@
 export default {
-  login: 'အကောင့်ဝင်ပါ',
   Setting: 'ဆက်တင်',
+  EmailAddress: 'အီးမေးလ်',
+  Password: 'စကားဝှက်',
+  LogIn: 'အကောင့်ဝင်ပါ',
+  Account: 'အကောင့်မရှိပူးလား',
+  Register: 'အကောင့်ဖွင့်ပါ',
+  ConfirmPassword: 'စကားဝှက် အတည်ပြုပါ',
+  HaveAccount: 'အကောင့်ရှိပါသလား',
+  LoginSuccessText: 'အကောင့်ဝင်ရောက်မှု အောင်မြင်ပါသည်',
+  RequestText: 'ကျေးဇူးပြု၍  စာသားထည့်သွင်းပါ',
+  RegisterSuccessfulText: 'အကောင့်ဖွင့်ခြင်း အောင်မြင်ပါသည်',
+  SamePasswordText: 'စကားဝှက်များ မတူညီပါ',
+  ErrorText: 'အီးမေးလ် သို့ စကားဝှက် မှားယွင်းနေပါသည်',
 };

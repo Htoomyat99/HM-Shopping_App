@@ -5,6 +5,8 @@ import {
   Image,
   TouchableOpacity,
   StyleSheet,
+  ToastAndroid,
+  TouchableHighlightBase,
 } from 'react-native';
 import React, {useContext} from 'react';
 import {
@@ -18,6 +20,7 @@ import {
 
 //components
 import {AuthContext} from '../../context/context';
+import {appStorage} from '../../utils/appStorage';
 
 //icons
 import SignOutIcon from '../../../assets/icons/SignOutIcon';
@@ -57,6 +60,11 @@ const CustomDrawer = props => {
     },
   });
 
+  const logOutHandler = () => {
+    appStorage.removeItem('@user.token');
+    getAuthen(true);
+    ToastAndroid.show('Log out Successful!', ToastAndroid.SHORT);
+  };
   return (
     <View style={{flex: 1}}>
       <DrawerContentScrollView
@@ -76,9 +84,7 @@ const CustomDrawer = props => {
         </View>
       </DrawerContentScrollView>
       <View style={styles.footer}>
-        <TouchableOpacity
-          onPress={() => getAuthen(true)}
-          style={styles.footerBox}>
+        <TouchableOpacity onPress={logOutHandler} style={styles.footerBox}>
           <SignOutIcon
             width={25}
             height={25}
