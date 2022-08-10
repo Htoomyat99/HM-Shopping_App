@@ -12,4 +12,10 @@ export default {
   RegisterSuccessfulText: 'အကောင့်ဖွင့်ခြင်း အောင်မြင်ပါသည်',
   SamePasswordText: 'စကားဝှက်များ မတူညီပါ',
   ErrorText: 'အီးမေးလ် သို့ စကားဝှက် မှားယွင်းနေပါသည်',
+  LogOut: 'ထွက်မည်',
+  Home: 'အိမ်',
+  Profile: 'ပရိုဖိုင်',
+  Terms: 'အချက်အလက်များ',
+  Order: 'အော်ဒါ',
+  Favorite: 'အကြိုက်ဆုံး',
 };

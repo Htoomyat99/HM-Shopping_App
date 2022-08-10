@@ -1,11 +1,14 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React from 'react';
+import React, {useContext} from 'react';
 
 //components
+import {AuthContext} from '../../../context/context';
 
 const DashboardScreen = props => {
+  const {darkMode} = useContext(AuthContext);
+
   return (
-    <View>
+    <View style={{flex: 1, backgroundColor: darkMode ? '#222' : '#fff'}}>
       <Text>Dashboard Screen</Text>
       <TouchableOpacity onPress={props.navi}>
         <Text>Go ProductDetail</Text>
@@ -20,7 +23,7 @@ const DashboardScreen = props => {
             top: 0,
             right: 80,
           }}
-          source={require('../../../assets/images/profile.jpg')}
+          source={require('../../../../assets/images/profileImg.jpg')}
         />
       </TouchableOpacity>
     </View>

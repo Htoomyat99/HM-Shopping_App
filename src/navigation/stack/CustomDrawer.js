@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ToastAndroid,
-  TouchableHighlightBase,
 } from 'react-native';
 import React, {useContext} from 'react';
 import {
@@ -21,12 +20,16 @@ import {
 //components
 import {AuthContext} from '../../context/context';
 import {appStorage} from '../../utils/appStorage';
+import {useLocal} from '../../hook/useLocal';
 
 //icons
 import SignOutIcon from '../../../assets/icons/SignOutIcon';
+import LightIcon from '../../../assets/icons/LightIcon';
+import DarkIcon from '../../../assets/icons/DarkIcon';
 
 const CustomDrawer = props => {
-  const {getAuthen} = useContext(AuthContext);
+  const local = useLocal();
+  const {getAuthen, darkMode, getDarkMode, userInfo} = useContext(AuthContext);
 
   const styles = StyleSheet.create({
     image: {
@@ -37,16 +40,17 @@ const CustomDrawer = props => {
     },
     imageText: {
       fontFamily: 'RobotoCondensed-Bold',
-      fontSize: wp(4.3),
+      fontSize: wp(4.5),
     },
     drawerContainer: {
       paddingTop: wp(4),
-      backgroundColor: '#fff',
+      backgroundColor: darkMode ? '#222' : '#fff',
     },
     footer: {
       padding: wp(5),
       borderTopWidth: wp(0.15),
       borderTopColor: '#ddd',
+      backgroundColor: darkMode ? '#222' : '#fff',
     },
     footerBox: {
       flexDirection: 'row',
@@ -56,7 +60,7 @@ const CustomDrawer = props => {
       fontFamily: 'RobotoCondensed-Regular',
       marginHorizontal: wp(2),
       fontSize: wp(4.5),
-      color: '#008000',
+      color: darkMode ? '#fff' : '#01D201',
     },
   });
 
@@ -65,19 +69,52 @@ const CustomDrawer = props => {
     getAuthen(true);
     ToastAndroid.show('Log out Successful!', ToastAndroid.SHORT);
   };
+
+  const ThemeHandler = () => {
+    getDarkMode(!darkMode);
+    // appStorage.setItem('@colorTheme', JSON.stringify(darkMode));
+  };
+
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: darkMode ? '#222' : '#fff'}}>
       <DrawerContentScrollView
         {...props}
-        contentContainerStyle={{backgroundColor: '#FF6C0A'}}>
+        contentContainerStyle={{backgroundColor: '#5BBF61'}}>
         <ImageBackground
-          style={{padding: wp(5)}}
-          source={require('../../../assets/images/drawerbg.jpg')}>
-          <Image
-            style={styles.image}
-            source={require('../../../assets/images/profile.jpg')}
-          />
-          <Text style={styles.imageText}>John Snow</Text>
+          style={{
+            padding: wp(5),
+            flexDirection: 'row-reverse',
+            justifyContent: 'space-between',
+          }}
+          source={require('../../../assets/images/drawerBg.png')}>
+          <TouchableOpacity onPress={ThemeHandler}>
+            {darkMode ? (
+              <DarkIcon
+                width={wp(7)}
+                height={wp(7)}
+                inColor="#fff"
+                outColor="#fff"
+              />
+            ) : (
+              <LightIcon
+                width={wp(9)}
+                height={wp(9)}
+                inColor="#fff"
+                outColor="#fff"
+              />
+            )}
+          </TouchableOpacity>
+          <View>
+            <TouchableOpacity activeOpacity={0.5}>
+              <Image
+                style={styles.image}
+                source={require('../../../assets/images/profileImg.jpg')}
+              />
+            </TouchableOpacity>
+            <Text style={styles.imageText}>
+              {userInfo ? userInfo.email : ''}
+            </Text>
+          </View>
         </ImageBackground>
         <View style={styles.drawerContainer}>
           <DrawerItemList {...props} />
@@ -88,10 +125,10 @@ const CustomDrawer = props => {
           <SignOutIcon
             width={25}
             height={25}
-            outColor="#008000"
-            inColor="#008000"
+            outColor="#01D201"
+            inColor="#01D201"
           />
-          <Text style={styles.footerText}>Log Out</Text>
+          <Text style={styles.footerText}>{local.LogOut}</Text>
         </TouchableOpacity>
       </View>
     </View>

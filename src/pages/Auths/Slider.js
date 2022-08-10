@@ -12,7 +12,7 @@ const Skip = ({...props}) => (
       style={{
         color: '#000',
         fontSize: hp(2.4),
-        marginLeft: wp(3),
+        marginLeft: wp(5),
         fontFamily: 'RobotoCondensed-Regular',
       }}>
       Skip
@@ -26,7 +26,7 @@ const Next = ({...props}) => (
       style={{
         color: '#000',
         fontSize: hp(2.4),
-        marginRight: wp(3),
+        marginRight: wp(5),
         fontFamily: 'RobotoCondensed-Regular',
       }}>
       Next
@@ -40,7 +40,7 @@ const Done = ({...props}) => (
       style={{
         color: '#000',
         fontSize: hp(2.4),
-        marginRight: wp(3),
+        marginRight: wp(5),
         fontFamily: 'RobotoCondensed-Regular',
       }}>
       Done

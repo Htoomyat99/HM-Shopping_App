@@ -10,6 +10,7 @@ import {
 import DashboardStack from './DashboardStack';
 import OrderScreen from '../../pages/Order/Order';
 import FavoriteScreen from '../../pages/Favorite/Favorite';
+import {useLocal} from '../../hook/useLocal';
 
 //Icons
 import HomeIcon from '../../../assets/icons/HomeIcon';
@@ -19,35 +20,36 @@ import FavoriteIcon from '../../../assets/icons/FavoriteIcon';
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
+  const local = useLocal();
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#E6D55B',
+          backgroundColor: '#fff',
           height: hp(8),
-          // position: 'absolute',
-          // bottom: hp(2),
-          // left: wp(4),
-          // right: wp(4),
-          // elevation: 0,
-          // borderRadius: wp(3),
-          // shadowOffset: {width: 0, height: 5},
-          // shadowColor: 'blue',
-          // shadowOpacity: hp(0.5),
-          // elevation: wp(0.5),
+          position: 'absolute',
+          bottom: hp(2),
+          left: wp(4),
+          right: wp(4),
+          elevation: 0,
+          borderRadius: wp(3),
+          shadowOffset: {width: 0, height: 5},
+          shadowColor: 'blue',
+          shadowOpacity: hp(0.4),
+          elevation: wp(0.5),
         },
       }}>
       <Tab.Screen
         name="DashboardStack"
         component={DashboardStack}
         options={{
-          title: 'Home',
-          tabBarActiveTintColor: '#E46301',
+          title: local.Home,
+          tabBarActiveTintColor: '#00D000',
           tabBarInactiveTintColor: '#999',
           tabBarIcon: ({focused, size, color}) => (
             <HomeIcon
-              inColor={focused ? '#E46301' : '#999'}
+              inColor={focused ? '#00D000' : '#999'}
               width={hp(3.7)}
               height={hp(3.7)}
             />
@@ -66,13 +68,13 @@ const TabNavigator = () => {
         name="OrderStack"
         component={OrderScreen}
         options={{
-          title: 'Order',
-          tabBarActiveTintColor: '#E46301',
+          title: local.Order,
+          tabBarActiveTintColor: '#00D000',
           tabBarInactiveTintColor: '#999',
           tabBarIcon: ({focused, size, color}) => (
             <CartIcon
-              outColor={focused ? '#E46301' : '#999'}
-              inColor={focused ? '#E6D55B' : '#E6D55B'}
+              outColor={focused ? '#00D000' : '#999'}
+              inColor="#fff"
               width={hp(4.2)}
               height={hp(4.2)}
             />
@@ -91,12 +93,12 @@ const TabNavigator = () => {
         name="FavoriteStack"
         component={FavoriteScreen}
         options={{
-          title: 'Favorite',
-          tabBarActiveTintColor: '#E46301',
+          title: local.Favorite,
+          tabBarActiveTintColor: '#00D000',
           tabBarInactiveTintColor: '#999',
           tabBarIcon: ({focused, size, color}) => (
             <FavoriteIcon
-              inColor={focused ? '#E46301' : '#999'}
+              inColor={focused ? '#00D000' : '#999'}
               width={hp(3)}
               height={hp(3)}
             />

@@ -69,7 +69,7 @@ const RegisterHeader = props => {
                 <TouchableOpacity
                   style={styles.eyeOnBox}
                   onPress={props.showPassHandler}>
-                  <EyeOnIcon width={wp(6)} height={hp(6)} outColor="#000" />
+                  <EyeOnIcon width={wp(6)} height={wp(4.5)} outColor="#000" />
                 </TouchableOpacity>
               )}
             </View>
@@ -92,7 +92,7 @@ const RegisterHeader = props => {
                 <TouchableOpacity
                   style={styles.eyeOnBox}
                   onPress={props.showConfirmPassHandler}>
-                  <EyeOnIcon width={wp(6)} height={hp(6)} outColor="#000" />
+                  <EyeOnIcon width={wp(6)} height={wp(4.5)} outColor="#000" />
                 </TouchableOpacity>
               )}
             </View>

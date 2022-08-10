@@ -42,13 +42,15 @@ const styles = StyleSheet.create({
   },
   eyeOnBox: {
     position: 'absolute',
-    top: hp(7),
-    left: wp(76),
+    top: hp(5.5),
+    left: wp(72),
+    padding: wp(2.5),
   },
   eyeOffBox: {
     position: 'absolute',
-    top: hp(6.5),
-    left: wp(76),
+    top: hp(5),
+    left: wp(72),
+    padding: wp(2.5),
   },
   signInContainer: {
     marginTop: hp(7),

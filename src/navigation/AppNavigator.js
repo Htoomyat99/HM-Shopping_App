@@ -10,13 +10,16 @@ import {appStorage} from '../utils/appStorage';
 
 const AppNavigator = () => {
   const [lang, setLang] = useState(null);
-  const [authen, setAuthen] = useState(null);
+  const [authen, setAuthen] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
+  const [splash, setSplash] = useState(true);
+  const [darkMode, setDarkMode] = useState(null);
 
   const context = {
     lang,
     userInfo,
     authen,
+    darkMode,
     getAuthen: value => {
       setAuthen(value);
     },
@@ -26,10 +29,14 @@ const AppNavigator = () => {
     getUserInfo: value => {
       setUserInfo(value);
     },
+    getDarkMode: value => {
+      setDarkMode(value);
+    },
   };
 
   useEffect(() => {
     getData();
+    console.log(darkMode);
   }, []);
 
   const getData = () => {
@@ -40,7 +47,15 @@ const AppNavigator = () => {
       setLang(storeLang);
       if (token) {
         setAuthen(false);
-        setUserInfo(userData ? JSON.parse(userData) : '');
+        setUserInfo(JSON.parse(userData));
+        setTimeout(() => {
+          setSplash(false);
+        }, 1500);
+      } else {
+        setAuthen(true);
+        setTimeout(() => {
+          setSplash(false);
+        }, 1500);
       }
     } catch (error) {
       console.log('error', error);
@@ -48,7 +63,13 @@ const AppNavigator = () => {
     }
   };
 
-  if (authen) {
+  if (splash) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <Text>Welcome to our App</Text>
+      </View>
+    );
+  } else if (authen) {
     return (
       <AuthContext.Provider value={context}>
         <NavigationContainer>

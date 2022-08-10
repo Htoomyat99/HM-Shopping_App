@@ -12,4 +12,11 @@ export default {
   RegisterSuccessfulText: 'Register Successful!',
   SamePasswordText: 'Password & Confirm password must be the same!',
   ErrorText: 'Email or Password incorrect!',
+  LogOut: 'Log out',
+  Home: 'Home',
+  Profile: 'Profile',
+  Terms: 'Terms & Conditions',
+  Setting: 'Setting',
+  Order: 'Order',
+  Favorite: 'Favorite',
 };

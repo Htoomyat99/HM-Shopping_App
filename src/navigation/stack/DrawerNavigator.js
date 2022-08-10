@@ -1,5 +1,5 @@
-import {View, Text} from 'react-native';
-import React from 'react';
+import {View, Text, Image} from 'react-native';
+import React, {useContext} from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {
   widthPercentageToDP as wp,
@@ -9,6 +9,8 @@ import {
 //components
 import TabNavigatorScreen from './TabNavigator';
 import CustomDrawer from './CustomDrawer';
+import {useLocal} from '../../hook/useLocal';
+import {AuthContext} from '../../context/context';
 
 //Screen
 import ProfileScreen from '../../pages/Profile/Profile';
@@ -24,18 +26,48 @@ import SettingIcon from '../../../assets/icons/SettingIcon';
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
+  const local = useLocal();
+  const {darkMode} = useContext(AuthContext);
+
+  const headerTitle = () => {
+    return (
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Image
+          style={{width: wp(8), height: wp(8), borderRadius: wp(4)}}
+          source={require('../../../assets/images/profileImg.jpg')}
+        />
+        <Text
+          style={{
+            fontFamily: 'RobotoCondensed-Bold',
+            fontSize: wp(4.5),
+            marginLeft: wp(2),
+          }}>
+          HM_Shopping
+        </Text>
+      </View>
+    );
+  };
+
   return (
     <Drawer.Navigator
       screenOptions={{
-        headerShown: false,
+        headerStyle: {backgroundColor: '#2FF500'},
+        headerTitleAlign: 'center',
+        headerTitle: headerTitle,
         drawerLabelStyle: {
           marginLeft: wp(-5),
           fontSize: wp(4.5),
+          marginVertical: wp(1),
           fontFamily: 'RobotoCondensed-Regular',
         },
         drawerActiveTintColor: '#fff',
-        drawerInactiveTintColor: '#000',
-        drawerActiveBackgroundColor: 'green',
+        drawerInactiveTintColor: darkMode ? '#fff' : '#000',
+        drawerActiveBackgroundColor: '#01D201',
       }}
       drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen
@@ -46,10 +78,11 @@ const DrawerNavigator = () => {
             <HomeIcon
               width={wp(6.4)}
               height={wp(6.4)}
-              inColor={focused ? '#fff' : '#008000'}
+              inColor={focused ? '#fff' : '#01D201'}
             />
           ),
-          title: 'Home',
+          title: local.Home,
+          headerShown: false,
         }}
       />
       <Drawer.Screen
@@ -60,10 +93,10 @@ const DrawerNavigator = () => {
             <ProfileIcon
               width={wp(6.4)}
               height={wp(6.4)}
-              outColor={focused ? '#fff' : '#008000'}
+              outColor={focused ? '#fff' : '#01D201'}
             />
           ),
-          title: 'Profile',
+          title: local.Profile,
         }}
       />
       <Drawer.Screen
@@ -74,11 +107,11 @@ const DrawerNavigator = () => {
             <TermsIcon
               width={wp(6.4)}
               height={wp(6.4)}
-              inColor={focused ? '#fff' : '#008000'}
-              outColor={focused ? '#fff' : '#008000'}
+              inColor={focused ? '#fff' : '#01D201'}
+              outColor={focused ? '#fff' : '#01D201'}
             />
           ),
-          title: 'Terms & Conditions',
+          title: local.Terms,
         }}
       />
       <Drawer.Screen
@@ -89,11 +122,11 @@ const DrawerNavigator = () => {
             <SettingIcon
               width={wp(6.4)}
               height={wp(6.4)}
-              outColor={focused ? '#fff' : '#008000'}
-              inColor={focused ? '#fff' : '#008000'}
+              outColor={focused ? '#fff' : '#01D201'}
+              inColor={focused ? '#fff' : '#01D201'}
             />
           ),
-          title: 'Setting',
+          title: local.Setting,
         }}
       />
     </Drawer.Navigator>

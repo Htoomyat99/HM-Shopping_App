@@ -69,7 +69,7 @@ const LoginHeader = props => {
                 <TouchableOpacity
                   style={styles.eyeOnBox}
                   onPress={props.showPassHandler}>
-                  <EyeOnIcon width={wp(6)} height={hp(6)} outColor="#000" />
+                  <EyeOnIcon width={wp(6)} height={hp(4.5)} outColor="#000" />
                 </TouchableOpacity>
               )}
             </View>
