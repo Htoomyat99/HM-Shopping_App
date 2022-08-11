@@ -19,4 +19,7 @@ export default {
   Setting: 'Setting',
   Order: 'Order',
   Favorite: 'Favorite',
+  HeaderQuote: `Let's find your best look!`,
+  Search: 'Search',
+  Upcoming: 'Upcoming Designs',
 };

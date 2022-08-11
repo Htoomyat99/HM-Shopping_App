@@ -1,32 +1,45 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
-import React, {useContext} from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  FlatList,
+  ImageBackground,
+} from 'react-native';
+import React from 'react';
+
+//styles
+import styles from './style';
 
 //components
-import {AuthContext} from '../../../context/context';
+import {productData} from '../../../data/data';
 
 const DashboardScreen = props => {
-  const {darkMode} = useContext(AuthContext);
+  const renderProduct = ({item}) => {
+    return (
+      <TouchableOpacity activeOpacity={0.5} onPress={props.productHandler}>
+        <Image source={item.image} style={styles.image} />
+        <View style={styles.container}>
+          <Text style={styles.text}>
+            {item.price}
+            {item.currency}
+          </Text>
+          <Text style={styles.text}>{item.name}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   return (
-    <View style={{flex: 1, backgroundColor: darkMode ? '#222' : '#fff'}}>
-      <Text>Dashboard Screen</Text>
-      <TouchableOpacity onPress={props.navi}>
-        <Text>Go ProductDetail</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={props.openDrawer}>
-        <Image
-          style={{
-            width: 40,
-            height: 40,
-            borderRadius: 20,
-            position: 'absolute',
-            top: 0,
-            right: 80,
-          }}
-          source={require('../../../../assets/images/profileImg.jpg')}
-        />
-      </TouchableOpacity>
-    </View>
+    <FlatList
+      numColumns={2}
+      data={productData}
+      style={{flexWrap: 'wrap'}}
+      renderItem={renderProduct}
+      keyExtractor={item => item.id}
+      showsVerticalScrollIndicator={false}
+    />
   );
 };
 
