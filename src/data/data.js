@@ -20,7 +20,7 @@ export const productData = [
     price: '120,000',
     currency: 'Ks',
     detail:
-      'Product Details Gailet by Carharrt WIP fashion, but make it fashional V-neck Zip Regular fit True to Size ',
+      'Gailet by Carharrt WIP fashion, but make it fashional V-neck Zip Regular fit True to Size ',
     image: require('../../assets/images/Carhartt.jpg'),
   },
   {

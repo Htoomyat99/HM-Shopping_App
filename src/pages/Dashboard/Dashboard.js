@@ -5,6 +5,7 @@ import React, {useContext} from 'react';
 import DashboardScreen from '../../components/Dashboard/product/DashboardScreen';
 import ProductHeader from '../../components/Dashboard/productHeader/ProductHeader';
 import {AuthContext} from '../../context/context';
+import {productData} from '../../data/data';
 
 const Dashboard = ({navigation}) => {
   const {darkMode} = useContext(AuthContext);
@@ -17,7 +18,9 @@ const Dashboard = ({navigation}) => {
       }}>
       <ProductHeader openDrawer={() => navigation.openDrawer()} />
       <DashboardScreen
-        productHandler={() => navigation.navigate('ProductDetail')}
+        productHandler={item =>
+          navigation.navigate('ProductDetail', {productData: item})
+        }
       />
     </View>
   );

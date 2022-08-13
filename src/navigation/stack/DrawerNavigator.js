@@ -58,7 +58,6 @@ const DrawerNavigator = () => {
       screenOptions={{
         headerStyle: {backgroundColor: '#2FF500'},
         headerTitleAlign: 'center',
-        headerTitle: headerTitle,
         drawerLabelStyle: {
           marginLeft: wp(-5),
           fontSize: wp(4.5),

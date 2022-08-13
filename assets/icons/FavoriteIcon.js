@@ -1,20 +1,21 @@
 import * as React from 'react';
-import Svg, {G, Path} from 'react-native-svg';
-/* SVGR has dropped some elements not supported by react-native-svg: title */
+import Svg, {Path} from 'react-native-svg';
 
 const FavoriteIcon = props => (
   <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 426.668 426.668"
     width={props.width}
     height={props.height}
-    xmlns="http://www.w3.org/2000/svg"
+    style={{
+      enableBackground: 'new 0 0 426.668 426.668',
+    }}
+    xmlSpace="preserve"
     {...props}>
-    <G fill="none" fillRule="evenodd">
-      <Path d="M-2-3h24v24H-2z" />
-      <Path
-        d="m10 18.35-1.45-1.32C3.4 12.36 0 9.28 0 5.5 0 2.42 2.42 0 5.5 0 7.24 0 8.91.81 10 2.09 11.09.81 12.76 0 14.5 0 17.58 0 20 2.42 20 5.5c0 3.78-3.4 6.86-8.55 11.54L10 18.35Z"
-        fill={props.inColor}
-      />
-    </G>
+    <Path
+      fill={props.inColor}
+      d="M401.788 74.476c-63.492-82.432-188.446-33.792-188.446 49.92 0-83.712-124.962-132.356-188.463-49.92-65.63 85.222-.943 234.509 188.459 320.265 189.393-85.756 254.08-235.043 188.45-320.265z"
+    />
   </Svg>
 );
 

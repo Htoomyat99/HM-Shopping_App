@@ -18,7 +18,9 @@ import {productData} from '../../../data/data';
 const DashboardScreen = props => {
   const renderProduct = ({item}) => {
     return (
-      <TouchableOpacity activeOpacity={0.5} onPress={props.productHandler}>
+      <TouchableOpacity
+        activeOpacity={0.5}
+        onPress={() => props.productHandler(item)}>
         <Image source={item.image} style={styles.image} />
         <View style={styles.container}>
           <Text style={styles.text}>
