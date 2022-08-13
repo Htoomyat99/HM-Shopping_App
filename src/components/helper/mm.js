@@ -16,6 +16,7 @@ export default {
   Home: 'အိမ်',
   Profile: 'ပရိုဖိုင်',
   Terms: 'အချက်အလက်များ',
+  Cart: 'ခြင်းတောင်း',
   Order: 'အော်ဒါ',
   Favorite: 'အကြိုက်ဆုံး',
   HeaderQuote: 'အကောင်းဆုံးကို ရှာဖွေလိုက်ပါ',

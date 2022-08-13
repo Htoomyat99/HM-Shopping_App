@@ -8,6 +8,7 @@ import {
 
 //components
 import DashboardStack from './DashboardStack';
+import CartScreen from '../../pages/Cart/Cart';
 import OrderScreen from '../../pages/Order/Order';
 import FavoriteScreen from '../../pages/Favorite/Favorite';
 import {useLocal} from '../../hook/useLocal';
@@ -16,6 +17,7 @@ import {useLocal} from '../../hook/useLocal';
 import HomeIcon from '../../../assets/icons/HomeIcon';
 import CartIcon from '../../../assets/icons/CartIcon';
 import FavoriteIcon from '../../../assets/icons/FavoriteIcon';
+import OrderIcon from '../../../assets/icons/OrderIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -65,10 +67,10 @@ const TabNavigator = () => {
         }}
       />
       <Tab.Screen
-        name="OrderStack"
-        component={OrderScreen}
+        name="CartStack"
+        component={CartScreen}
         options={{
-          title: local.Order,
+          title: local.Cart,
           tabBarActiveTintColor: '#00D000',
           tabBarInactiveTintColor: '#999',
           tabBarIcon: ({focused, size, color}) => (
@@ -77,6 +79,30 @@ const TabNavigator = () => {
               inColor="#fff"
               width={hp(4.2)}
               height={hp(4.2)}
+            />
+          ),
+          tabBarLabelStyle: {
+            fontSize: wp(4),
+            paddingBottom: hp(0.5),
+            fontFamily: 'RobotoCondensed-Regular',
+          },
+          tabBarIconStyle: {
+            marginTop: hp(1.7),
+          },
+        }}
+      />
+      <Tab.Screen
+        name="OrderStack"
+        component={OrderScreen}
+        options={{
+          title: local.Order,
+          tabBarActiveTintColor: '#00D000',
+          tabBarInactiveTintColor: '#999',
+          tabBarIcon: ({focused, size, color}) => (
+            <OrderIcon
+              Color={focused ? '#00D000' : '#999'}
+              width={hp(4)}
+              height={hp(4)}
             />
           ),
           tabBarLabelStyle: {

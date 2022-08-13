@@ -1,4 +1,10 @@
-import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import React, {useContext} from 'react';
 import {
   widthPercentageToDP as wp,
@@ -11,7 +17,10 @@ import styles from './style';
 import {AuthContext} from '../../context/context';
 import {useLocal} from '../../hook/useLocal';
 
-const Terms = () => {
+//icons
+import BackIcon from '../../../assets/icons/BackIcon';
+
+const Terms = ({navigation}) => {
   const local = useLocal();
   const {darkMode} = useContext(AuthContext);
 
@@ -28,6 +37,14 @@ const Terms = () => {
   });
   return (
     <View style={{...styles.container, ...internalStyle.container}}>
+      <View style={styles.headerContainer}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.backIcon}>
+          <BackIcon width={wp(7)} height={wp(7)} Color="#444" />
+        </TouchableOpacity>
+        <Text style={styles.headerContainerText}>{local.Terms}</Text>
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>

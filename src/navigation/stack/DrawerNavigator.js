@@ -67,6 +67,7 @@ const DrawerNavigator = () => {
         drawerActiveTintColor: '#fff',
         drawerInactiveTintColor: darkMode ? '#fff' : '#000',
         drawerActiveBackgroundColor: '#01D201',
+        headerShown: false,
       }}
       drawerContent={props => <CustomDrawer {...props} />}>
       <Drawer.Screen
@@ -81,7 +82,6 @@ const DrawerNavigator = () => {
             />
           ),
           title: local.Home,
-          headerShown: false,
         }}
       />
       <Drawer.Screen

@@ -17,6 +17,7 @@ export default {
   Profile: 'Profile',
   Terms: 'Terms & Conditions',
   Setting: 'Setting',
+  Cart: 'Cart',
   Order: 'Order',
   Favorite: 'Favorite',
   HeaderQuote: `Let's find your best look!`,

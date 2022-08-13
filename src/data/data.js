@@ -22,6 +22,7 @@ export const productData = [
     detail:
       'Gailet by Carharrt WIP fashion, but make it fashional V-neck Zip Regular fit True to Size ',
     image: require('../../assets/images/Carhartt.jpg'),
+    quantity: 1,
   },
   {
     id: 2,
@@ -31,6 +32,7 @@ export const productData = [
     detail:
       'Just female Fox ribbed, fitted blouse, with ruffle hem and tan contrasting stitching. 96% recycled polyster, 4% elasthane.',
     image: require('../../assets/images/foxBlouse.jpg'),
+    quantity: 1,
   },
   {
     id: 3,
@@ -40,6 +42,7 @@ export const productData = [
     detail:
       'This swing mini is perfect for those daytime events coming up. It features a gathered bust, fitted waist and tie straps.',
     image: require('../../assets/images/miniDress.jpg'),
+    quantity: 1,
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ export const productData = [
     currency: 'Ks',
     detail: 'Overshirts for men for a sharp and sophisticated look.',
     image: require('../../assets/images/overshirt.jpg'),
+    quantity: 1,
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ export const productData = [
     detail:
       'These hoodies are good for look, new styling and easy to wear, 100% cotton imported.',
     image: require('../../assets/images/sheinHoodie.jpg'),
+    quantity: 1,
   },
   {
     id: 6,
@@ -65,6 +70,7 @@ export const productData = [
     currency: 'Ks',
     detail: `A garment-dyed crewnek sweatshirt you'll wear on repeat all year round. soft and comfy with subtle variations in colors`,
     image: require('../../assets/images/Sweatshirt.jpg'),
+    quantity: 1,
   },
   {
     id: 7,
@@ -74,6 +80,7 @@ export const productData = [
     detail:
       'This Sweater Top is perfet to complete your chip look street style outfit and a good holiday season aesthetic to wear.',
     image: require('../../assets/images/sweaterTop.jpg'),
+    quantity: 1,
   },
   {
     id: 8,
@@ -83,6 +90,7 @@ export const productData = [
     detail:
       'Fold Down Collar Front Zipper Closure Side Hand Pockets Drawstring at waist self 100% polyester Linign and Filling',
     image: require('../../assets/images/TitanCargo.jpg'),
+    quantity: 1,
   },
   {
     id: 9,
@@ -92,6 +100,7 @@ export const productData = [
     detail:
       'Material Polyester Gender Women, Fabric type Batik Usage School Uniform, High-waisted skirt Plaid skirt',
     image: require('../../assets/images/vestJacket.jpg'),
+    quantity: 1,
   },
   {
     id: 10,
@@ -101,5 +110,6 @@ export const productData = [
     detail:
       'Buy Utility Gilet. Shop the latest streetwear, high street and desinger fashion trends.',
     image: require('../../assets/images/Utility.jpg'),
+    quantity: 1,
   },
 ];

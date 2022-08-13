@@ -48,7 +48,7 @@ const ProductDetailScreen = props => {
           <BackIcon width={wp(8)} height={wp(8)} Color="#000" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={props.loveHandler}
+          onPress={() => console.log('it works')}
           style={styles.favoriteIcon}>
           <FavoriteIcon width={wp(8)} height={wp(8)} inColor="#fefefe" />
         </TouchableOpacity>
@@ -65,7 +65,7 @@ const ProductDetailScreen = props => {
         <Text style={{...styles.detailPara, ...internalStyle.detailPara}}>
           {props.data.detail}
         </Text>
-        <TouchableOpacity style={styles.btn}>
+        <TouchableOpacity style={styles.btn} onPress={props.addCartHandler}>
           <Text style={styles.btnText}>{local.AddCart}</Text>
         </TouchableOpacity>
       </View>

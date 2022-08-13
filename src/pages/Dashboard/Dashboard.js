@@ -5,7 +5,6 @@ import React, {useContext} from 'react';
 import DashboardScreen from '../../components/Dashboard/product/DashboardScreen';
 import ProductHeader from '../../components/Dashboard/productHeader/ProductHeader';
 import {AuthContext} from '../../context/context';
-import {productData} from '../../data/data';
 
 const Dashboard = ({navigation}) => {
   const {darkMode} = useContext(AuthContext);
