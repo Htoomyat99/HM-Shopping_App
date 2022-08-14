@@ -16,12 +16,14 @@ const AppNavigator = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [splash, setSplash] = useState(true);
   const [darkMode, setDarkMode] = useState(null);
+  const [name, setName] = useState(null);
 
   const context = {
     lang,
     userInfo,
     authen,
     darkMode,
+    name,
     getAuthen: value => {
       setAuthen(value);
     },
@@ -33,6 +35,9 @@ const AppNavigator = () => {
     },
     getDarkMode: value => {
       setDarkMode(value);
+    },
+    getName: value => {
+      setName(value);
     },
   };
 
@@ -46,6 +51,8 @@ const AppNavigator = () => {
       const token = appStorage.getItem('@user.token');
       const userData = appStorage.getItem('@user.data');
       const storeLang = appStorage.getItem('@language');
+      const userName = appStorage.getItem('@user.name');
+      setName(userName);
       setLang(storeLang);
       if (token) {
         setAuthen(false);

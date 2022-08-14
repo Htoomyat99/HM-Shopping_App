@@ -29,7 +29,8 @@ import DarkIcon from '../../../assets/icons/DarkIcon';
 
 const CustomDrawer = props => {
   const local = useLocal();
-  const {getAuthen, darkMode, getDarkMode, userInfo} = useContext(AuthContext);
+  const {getAuthen, darkMode, getDarkMode, userInfo, name} =
+    useContext(AuthContext);
 
   const styles = StyleSheet.create({
     image: {
@@ -67,7 +68,7 @@ const CustomDrawer = props => {
   const logOutHandler = () => {
     appStorage.removeItem('@user.token');
     getAuthen(true);
-    ToastAndroid.show('Log out Successful!', ToastAndroid.SHORT);
+    ToastAndroid.show(local.LogOutSuccess, ToastAndroid.SHORT);
   };
 
   const ThemeHandler = () => {
@@ -105,12 +106,11 @@ const CustomDrawer = props => {
             )}
           </TouchableOpacity>
           <View>
-            <TouchableOpacity activeOpacity={0.5}>
-              <Image
-                style={styles.image}
-                source={require('../../../assets/images/profileImg.jpg')}
-              />
-            </TouchableOpacity>
+            <Image
+              style={styles.image}
+              source={require('../../../assets/images/profileImg.jpg')}
+            />
+            <Text style={styles.imageText}>{name ? name : ''}</Text>
             <Text style={styles.imageText}>
               {userInfo ? userInfo.email : ''}
             </Text>

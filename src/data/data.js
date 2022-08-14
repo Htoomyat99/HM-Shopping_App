@@ -17,7 +17,7 @@ export const productData = [
   {
     id: 1,
     name: 'Carharrt WIP Vest',
-    price: '120,000',
+    price: 120000,
     currency: 'Ks',
     detail:
       'Gailet by Carharrt WIP fashion, but make it fashional V-neck Zip Regular fit True to Size ',
@@ -27,7 +27,7 @@ export const productData = [
   {
     id: 2,
     name: 'Female Fox Blouse',
-    price: '180,000',
+    price: 180000,
     currency: 'Ks',
     detail:
       'Just female Fox ribbed, fitted blouse, with ruffle hem and tan contrasting stitching. 96% recycled polyster, 4% elasthane.',
@@ -37,7 +37,7 @@ export const productData = [
   {
     id: 3,
     name: 'Red Floral Dress',
-    price: '170,000',
+    price: 170000,
     currency: 'Ks',
     detail:
       'This swing mini is perfect for those daytime events coming up. It features a gathered bust, fitted waist and tie straps.',
@@ -47,7 +47,7 @@ export const productData = [
   {
     id: 4,
     name: 'Men Overshirt',
-    price: '230,000',
+    price: 230000,
     currency: 'Ks',
     detail: 'Overshirts for men for a sharp and sophisticated look.',
     image: require('../../assets/images/overshirt.jpg'),
@@ -56,7 +56,7 @@ export const productData = [
   {
     id: 5,
     name: 'Two Tones Hoodie',
-    price: '150,000',
+    price: 150000,
     currency: 'Ks',
     detail:
       'These hoodies are good for look, new styling and easy to wear, 100% cotton imported.',
@@ -66,7 +66,7 @@ export const productData = [
   {
     id: 6,
     name: 'Crewneck Sweatshirt',
-    price: '800,00',
+    price: 80000,
     currency: 'Ks',
     detail: `A garment-dyed crewnek sweatshirt you'll wear on repeat all year round. soft and comfy with subtle variations in colors`,
     image: require('../../assets/images/Sweatshirt.jpg'),
@@ -75,7 +75,7 @@ export const productData = [
   {
     id: 7,
     name: 'Sweater Top',
-    price: '150,000',
+    price: 150000,
     currency: 'Ks',
     detail:
       'This Sweater Top is perfet to complete your chip look street style outfit and a good holiday season aesthetic to wear.',
@@ -85,7 +85,7 @@ export const productData = [
   {
     id: 8,
     name: 'Titan Cargo Jacket',
-    price: '200,000',
+    price: 200000,
     currency: 'Ks',
     detail:
       'Fold Down Collar Front Zipper Closure Side Hand Pockets Drawstring at waist self 100% polyester Linign and Filling',
@@ -95,7 +95,7 @@ export const productData = [
   {
     id: 9,
     name: 'Japanese Suit Uniform',
-    price: '220,000',
+    price: 220000,
     currency: 'Ks',
     detail:
       'Material Polyester Gender Women, Fabric type Batik Usage School Uniform, High-waisted skirt Plaid skirt',
@@ -105,7 +105,7 @@ export const productData = [
   {
     id: 10,
     name: 'Utility Gilet',
-    price: '160,000',
+    price: 160000,
     currency: 'Ks',
     detail:
       'Buy Utility Gilet. Shop the latest streetwear, high street and desinger fashion trends.',

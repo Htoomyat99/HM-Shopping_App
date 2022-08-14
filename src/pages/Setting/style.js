@@ -6,7 +6,7 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
+    flex: 1,
   },
   headerContainer: {
     backgroundColor: '#2FF500',
@@ -23,6 +23,25 @@ const styles = StyleSheet.create({
   backIcon: {
     marginLeft: wp(3),
     padding: wp(2),
+  },
+  language: {
+    fontFamily: 'RobotoCondensed-Bold',
+    fontSize: wp(5.5),
+    marginTop: hp(3),
+    marginLeft: wp(6),
+    marginBottom: hp(2),
+  },
+  langBox: {
+    marginTop: hp(0.5),
+    marginLeft: wp(5),
+    padding: wp(2),
+    width: wp(90),
+    borderColor: '#2FF500',
+    borderWidth: wp(0.2),
+    borderRadius: wp(3),
+  },
+  lang: {
+    padding: wp(0.8),
   },
 });
 

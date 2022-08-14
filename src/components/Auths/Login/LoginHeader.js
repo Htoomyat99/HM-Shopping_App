@@ -31,9 +31,6 @@ const LoginHeader = props => {
   return (
     <KeyboardAvoidingWrapper>
       <View style={styles.container}>
-        <ImageBackground
-          style={styles.bgImage}
-          source={require('../../../../assets/images/loginBg.jpg')}>
           <View style={styles.imageContainer}>
             <Image
               source={require('../../../../assets/images/loginImg.png')}
@@ -88,7 +85,6 @@ const LoginHeader = props => {
               </TouchableOpacity>
             </View>
           </View>
-        </ImageBackground>
       </View>
     </KeyboardAvoidingWrapper>
   );

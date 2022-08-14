@@ -38,4 +38,9 @@ export default {
   ServerPara: `In the event that any provision of these Terms of Service is determined by a court of competent jurisdiction to be unlawful, void or unenforceable, such provision will nonetheless be enforceable to the fullest extent permitted by applicable law, the unenforceable portion will be deemed to be severed from these Terms of Service, and such determination will not affect the validity and enforceability of any other remaining provisions.`,
   Survival: `Survival`,
   SurvivalPara: `Upon termination of your use of Shop or termination of these Terms of Service for any reason, the following sections will survive termination: Preamble, Sections 1.6, 2, 3.6 and 4 through 12. If you have any questions about Shop or these Terms of Service, please visit www.HM_shopping.app or contact us at help@HM_shopping.app.`,
+  EmptyCart: 'Empty Cart',
+  MyCart: 'My CartList',
+  SuccessAdd: 'Successfully Added',
+  LogOutSuccess: 'Log out Successful!',
+  language: 'Language',
 };
