@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     padding: wp(2),
     width: wp(90),
     borderColor: '#2FF500',
-    borderWidth: wp(0.2),
+    borderWidth: wp(0.25),
     borderRadius: wp(3),
   },
   lang: {

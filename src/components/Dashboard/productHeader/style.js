@@ -36,28 +36,13 @@ const styles = StyleSheet.create({
     width: wp(92),
     marginTop: hp(1),
   },
-  SearchBarContainer: {
-    marginTop: hp(1),
-    flexDirection: 'row',
-    alignItems: 'center',
-    width: wp(91),
-    paddingHorizontal: wp(3),
-    paddingVertical: wp(0.5),
-    borderWidth: wp(0.2),
-    borderRadius: wp(2),
-  },
-  searchBar: {
-    width: wp(80),
-    fontFamily: 'RobotoCondensed-Regular',
-    fontSize: wp(5),
-    marginLeft: hp(0.5),
-  },
   bannerText: {
     width: wp(92),
     paddingVertical: wp(2),
     fontSize: wp(4.5),
     fontFamily: 'RobotoCondensed-Bold',
     marginBottom: hp(1),
+    marginTop: hp(10),
   },
 });
 

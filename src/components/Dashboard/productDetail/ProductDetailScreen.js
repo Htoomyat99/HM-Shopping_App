@@ -48,7 +48,7 @@ const ProductDetailScreen = props => {
           <BackIcon width={wp(8)} height={wp(8)} Color="#000" />
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => console.log('it works')}
+          onPress={props.favoriteHandler}
           style={styles.favoriteIcon}>
           <FavoriteIcon width={wp(8)} height={wp(8)} inColor="#fefefe" />
         </TouchableOpacity>

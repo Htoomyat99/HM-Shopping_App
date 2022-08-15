@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     fontFamily: 'RobotoCondensed-Regular',
     padding: wp(1),
     borderWidth: wp(0.1),
-    borderColor: 'green',
+    borderColor: '#2FF500',
     marginLeft: wp(2),
   },
   nameBox: {
@@ -71,13 +71,14 @@ const styles = StyleSheet.create({
     paddingVertical: wp(1),
     paddingHorizontal: wp(2.2),
     borderWidth: wp(0.1),
-    borderColor: 'green',
+    borderColor: '#2FF500',
     marginLeft: wp(2),
   },
   emailContainer: {
     marginTop: hp(1),
     width: wp(42),
     marginRight: wp(10),
+    marginBottom: hp(5),
   },
   email: {
     fontFamily: 'RobotoCondensed-Bold',
@@ -85,11 +86,27 @@ const styles = StyleSheet.create({
     borderBottomWidth: wp(0.2),
     borderColor: '#2FF500',
   },
+  container: {
+    flexDirection: 'row',
+    width: wp(85),
+    alignItems: 'center',
+    padding: wp(5),
+    borderColor: '#2FF500',
+    borderWidth: wp(0.2),
+    borderRadius: wp(3),
+    marginTop: hp(2),
+  },
+  containerText: {
+    fontFamily: 'RobotoCondensed-Regular',
+    fontSize: wp(5),
+    marginLeft: wp(4),
+  },
   logOutBtn: {
-    marginTop: hp(20),
+    marginTop: hp(6),
     paddingHorizontal: wp(5),
     paddingVertical: wp(2.5),
     borderRadius: wp(3),
+    backgroundColor: '#2FF500',
   },
   logOutText: {
     fontFamily: 'RobotoCondensed-Regular',

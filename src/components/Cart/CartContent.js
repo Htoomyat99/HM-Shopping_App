@@ -7,18 +7,17 @@ import {
   StyleSheet,
 } from 'react-native';
 import React, {useEffect, useContext} from 'react';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 //styles
 import styles from './style';
-import {
-  heightPercentageToDP as wp,
-  widthPercentageToDP as hp,
-} from 'react-native-responsive-screen';
 
 //components
 import {AuthContext} from '../../context/context';
+import {useLocal} from '../../hook/useLocal';
 
 const CartContent = props => {
+  const local = useLocal();
   const {darkMode} = useContext(AuthContext);
   const internalStyles = StyleSheet.create({
     container: {
@@ -27,29 +26,11 @@ const CartContent = props => {
     name: {
       color: darkMode ? '#fff' : '#8e8e8e',
     },
-    price: {
-      color: darkMode ? '#fff' : '#8e8e8e',
-    },
-    minusIcon: {
-      borderColor: darkMode ? '#fff' : '#8e8e8e',
-    },
-    plusIcon: {
-      borderColor: darkMode ? '#fff' : '#8e8e8e',
-    },
-    minus: {
-      color: darkMode ? '#fff' : '#8e8e8e',
-    },
-    plus: {
-      color: darkMode ? '#fff' : '#8e8e8e',
-    },
-    quantity: {
-      color: darkMode ? '#fff' : '#8e8e8e',
-    },
   });
 
   const renderItem = ({item}) => {
     return (
-      <View style={{...styles.container, ...internalStyles.container}}>
+      <View style={styles.container}>
         <View>
           <Image source={item.image} style={styles.image} />
         </View>
@@ -57,22 +38,22 @@ const CartContent = props => {
           <Text style={{...styles.name, ...internalStyles.name}}>
             {item.name}
           </Text>
-          <Text style={{...styles.price, ...internalStyles.price}}>
+          <Text style={{...styles.price, ...internalStyles.name}}>
             {item.price} {item.currency}
           </Text>
           <View style={styles.iconContainer}>
             <TouchableOpacity
               onPress={() => props.minusHandler(item)}
-              style={{...styles.minusIcon, ...internalStyles.minusIcon}}>
-              <Text style={{...styles.minus, ...internalStyles.minus}}>-</Text>
+              style={{...styles.minusIcon, ...internalStyles.container}}>
+              <Text style={{...styles.minus, ...internalStyles.name}}>-</Text>
             </TouchableOpacity>
-            <Text style={{...styles.quantity, ...internalStyles.quantity}}>
+            <Text style={{...styles.quantity, ...internalStyles.name}}>
               x {item.quantity}
             </Text>
             <TouchableOpacity
               onPress={() => props.addHandler(item)}
-              style={{...styles.plusIcon, ...internalStyles.plusIcon}}>
-              <Text style={{...styles.plus, ...internalStyles.plus}}>+</Text>
+              style={{...styles.plusIcon, ...internalStyles.container}}>
+              <Text style={{...styles.plus, ...internalStyles.name}}>+</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -80,12 +61,28 @@ const CartContent = props => {
     );
   };
   return (
-    <FlatList
-      data={props.data}
-      renderItem={renderItem}
-      showsVerticalScrollIndicator={false}
-      keyExtractor={item => item.id}
-    />
+    <View>
+      <FlatList
+        data={props.data}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={item => item.id}
+      />
+      <TouchableOpacity
+        onPress={props.OrderHandler}
+        style={{
+          backgroundColor: '#2FF500',
+          position: 'absolute',
+          top: hp(75),
+          right: hp(0.5),
+          padding: hp(1.3),
+          borderRadius: hp(0.9),
+        }}>
+        <Text style={{fontFamily: 'RobotoCondensed-Bold', fontSize: hp(2)}}>
+          {local.OrderNow}
+        </Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 

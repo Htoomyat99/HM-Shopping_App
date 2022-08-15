@@ -25,6 +25,24 @@ const styles = StyleSheet.create({
     fontSize: wp(4.5),
     color: '#f7f7f7',
   },
+  SearchBarContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width: wp(92),
+    paddingHorizontal: wp(3),
+    paddingVertical: wp(0.5),
+    borderWidth: wp(0.2),
+    borderRadius: wp(2),
+    position: 'absolute',
+    top: hp(-33.5),
+    marginLeft: wp(4),
+  },
+  searchBar: {
+    width: wp(91),
+    fontFamily: 'RobotoCondensed-Regular',
+    fontSize: wp(5),
+    marginLeft: hp(0.5),
+  },
 });
 
 export default styles;

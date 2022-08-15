@@ -36,12 +36,6 @@ const ProductHeader = props => {
     quoteText: {
       color: darkMode ? '#fff' : '#8e8e8e',
     },
-    bannerText: {
-      color: darkMode ? '#fff' : '#8e8e8e',
-    },
-    SearchBarContainer: {
-      borderColor: darkMode ? '#fff' : '#2FF500',
-    },
   });
 
   const renderBanner = ({item, index}) => {
@@ -62,23 +56,7 @@ const ProductHeader = props => {
       <Text style={{...styles.quoteText, ...internalStyles.quoteText}}>
         {local.HeaderQuote}
       </Text>
-      <View
-        style={{
-          ...styles.SearchBarContainer,
-          ...internalStyles.SearchBarContainer,
-        }}>
-        <SearchIcon
-          width={wp(5)}
-          height={wp(5)}
-          outColor={darkMode ? '#fff' : '#8e8e8e'}
-        />
-        <TextInput
-          placeholder={local.Search}
-          style={styles.searchBar}
-          placeholderTextColor={darkMode ? '#fff' : '#8e8e8e'}
-        />
-      </View>
-      <Text style={{...styles.bannerText, ...internalStyles.bannerText}}>
+      <Text style={{...styles.bannerText, ...internalStyles.quoteText}}>
         {local.Upcoming}
       </Text>
       <Carousel

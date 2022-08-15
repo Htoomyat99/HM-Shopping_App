@@ -10,7 +10,6 @@ export default (state = initialState, action) => {
       let cartid = action.cart.id;
       let currentPrice = action.cart.price;
       let updateCartItem;
-      let curentQty = action.cart.quantity;
 
       if (state.cartItems[cartid]) {
         const newCart = {

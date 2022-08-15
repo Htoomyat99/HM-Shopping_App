@@ -1,7 +1,11 @@
-import {View, Text, TouchableOpacity} from 'react-native';
-import React, {useState, useEffect} from 'react';
+import {View, Text, TouchableOpacity, Animated} from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 //components
 import AuthStack from './stack/AuthStack';
@@ -17,6 +21,7 @@ const AppNavigator = () => {
   const [splash, setSplash] = useState(true);
   const [darkMode, setDarkMode] = useState(null);
   const [name, setName] = useState(null);
+  const [productInfo, setProductInfo] = useState(null);
 
   const context = {
     lang,
@@ -24,6 +29,7 @@ const AppNavigator = () => {
     authen,
     darkMode,
     name,
+    productInfo,
     getAuthen: value => {
       setAuthen(value);
     },
@@ -39,11 +45,20 @@ const AppNavigator = () => {
     getName: value => {
       setName(value);
     },
+    getProductInfo: value => {
+      setProductInfo(value);
+    },
   };
+
+  const position = useRef(new Animated.Value(wp(10))).current;
 
   useEffect(() => {
     getData();
-    console.log(darkMode);
+    Animated.timing(position, {
+      toValue: wp(80),
+      duration: 2000,
+      useNativeDriver: false,
+    }).start();
   }, []);
 
   const getData = () => {
@@ -59,7 +74,7 @@ const AppNavigator = () => {
         setUserInfo(JSON.parse(userData));
         setTimeout(() => {
           setSplash(false);
-        }, 1500);
+        }, 2000);
       } else {
         setAuthen(true);
         setTimeout(() => {
@@ -72,10 +87,50 @@ const AppNavigator = () => {
     }
   };
 
+  const bgColor2 = position.interpolate({
+    inputRange: [10, 90, 170, 250],
+    outputRange: ['white', 'red', 'blue', 'green'],
+  });
+
+  const rotation = position.interpolate({
+    inputRange: [10, 250],
+    outputRange: ['0deg', '360deg'],
+  });
+
   if (splash) {
     return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>Welcome to our App</Text>
+      <View style={{flex: 1}}>
+        <Animated.View
+          style={[
+            {
+              width: hp(4),
+              height: hp(4),
+              borderRadius: hp(6),
+              backgroundColor: 'red',
+              marginTop: hp(40),
+            },
+            {
+              transform: [
+                {
+                  translateX: position,
+                },
+                {
+                  rotate: rotation,
+                },
+              ],
+              backgroundColor: bgColor2,
+            },
+          ]}
+        />
+        <Text
+          style={{
+            marginLeft: wp(20),
+            width: wp(80),
+            fontFamily: 'RobotoCondensed-Regular',
+            fontSize: wp(5),
+          }}>
+          Welcome from H_M Shopping
+        </Text>
       </View>
     );
   } else if (authen) {

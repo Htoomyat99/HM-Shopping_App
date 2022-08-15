@@ -1,5 +1,5 @@
-import {View, Text} from 'react-native';
-import React, {useContext} from 'react';
+import {View, Text, ToastAndroid} from 'react-native';
+import React, {useContext, useEffect} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -37,11 +37,16 @@ const Cart = () => {
   });
 
   const addHandler = value => {
-    dispatch(actionCart.addToCart(value));
+    const item = dispatch(actionCart.addToCart(value));
+    console.log('item >>>', item);
   };
 
   const minusHandler = data => {
     dispatch(actionCart.removeCart(data));
+  };
+
+  const OrderHandler = () => {
+    ToastAndroid.show(local.NoService, ToastAndroid.SHORT);
   };
 
   if (cartList.length) {
@@ -65,6 +70,7 @@ const Cart = () => {
           data={cartList}
           minusHandler={minusHandler}
           addHandler={addHandler}
+          OrderHandler={OrderHandler}
         />
       </View>
     );
@@ -81,7 +87,7 @@ const Cart = () => {
           width={hp(8)}
           height={hp(8)}
           inColor={darkMode ? '#222' : '#fff'}
-          outColor={darkMode ? '#fff' : '#ddd'}
+          outColor={darkMode ? '#ddd' : '#ddd'}
         />
         <Text
           style={{

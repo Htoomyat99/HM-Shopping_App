@@ -12,7 +12,6 @@ const Dashboard = ({navigation}) => {
     <View
       style={{
         flex: 1,
-        alignItems: 'center',
         backgroundColor: darkMode ? '#222' : '#fff',
       }}>
       <ProductHeader openDrawer={() => navigation.openDrawer()} />

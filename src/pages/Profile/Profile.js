@@ -22,6 +22,9 @@ import {appStorage} from '../../utils/appStorage';
 
 //icons
 import BackIcon from '../../../assets/icons/BackIcon';
+import AccountIcon from '../../../assets/icons/AccountIcon';
+import NotiIcon from '../../../assets/icons/NotiIcon';
+import HelpIcon from '../../../assets/icons/HelpIcon';
 
 const Profile = ({navigation}) => {
   const local = useLocal();
@@ -46,6 +49,10 @@ const Profile = ({navigation}) => {
     ToastAndroid.show(local.LogOutSuccess, ToastAndroid.SHORT);
   };
 
+  const alertHandler = () => {
+    ToastAndroid.show(local.NoService, ToastAndroid.SHORT);
+  };
+
   const internalStyles = StyleSheet.create({
     BodyContainer: {
       backgroundColor: darkMode ? '#222' : '#fff',
@@ -53,13 +60,10 @@ const Profile = ({navigation}) => {
     name: {
       color: darkMode ? '#fff' : '#8e8e8e',
     },
-    logOutBtn: {
-      backgroundColor: darkMode ? '#fff' : '#2FF500',
-    },
   });
 
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.headerContainer}>
         <TouchableOpacity
           onPress={() => navigation.goBack()}
@@ -110,8 +114,45 @@ const Profile = ({navigation}) => {
           </Text>
         </View>
         <TouchableOpacity
-          onPress={logOutHandler}
-          style={{...styles.logOutBtn, ...internalStyles.logOutBtn}}>
+          style={styles.container}
+          activeOpacity={0.5}
+          onPress={alertHandler}>
+          <AccountIcon
+            width={wp(6)}
+            height={wp(6)}
+            Color={darkMode ? '#fff' : '#2FF500'}
+          />
+          <Text style={{...styles.containerText, ...internalStyles.name}}>
+            {local.MyAccount}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.container}
+          activeOpacity={0.5}
+          onPress={alertHandler}>
+          <NotiIcon
+            width={wp(6)}
+            height={wp(6)}
+            Color={darkMode ? '#fff' : '#2FF500'}
+          />
+          <Text style={{...styles.containerText, ...internalStyles.name}}>
+            {local.Noti}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.container}
+          activeOpacity={0.5}
+          onPress={alertHandler}>
+          <HelpIcon
+            width={wp(6)}
+            height={wp(6)}
+            Color={darkMode ? '#fff' : '#2FF500'}
+          />
+          <Text style={{...styles.containerText, ...internalStyles.name}}>
+            {local.HelpCenter}
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={logOutHandler} style={styles.logOutBtn}>
           <Text style={styles.logOutText}>{local.LogOut}</Text>
         </TouchableOpacity>
       </View>

@@ -112,4 +112,64 @@ export const productData = [
     image: require('../../assets/images/Utility.jpg'),
     quantity: 1,
   },
+  {
+    id: 11,
+    name: 'Oversized Hoodie',
+    price: 140000,
+    currency: 'Ks',
+    detail:
+      'Hoodie by ASOS DESIGN Basic but essential Drawstring hood Dropped shoulders Pouch pocket Fitted trims Oversized fit More room for activities',
+    image: require('../../assets/images/Asos.jpg'),
+    quantity: 1,
+  },
+  {
+    id: 12,
+    name: 'Suit Blazer',
+    price: 230000,
+    currency: 'Ks',
+    detail:
+      'Browse online for the newest ASOS DESIGN mansy double breasted suit blazer in blue grid check styles. ',
+    image: require('../../assets/images/suitBlazer.jpg'),
+    quantity: 1,
+  },
+  {
+    id: 13,
+    name: 'Bodycon Dress',
+    price: 210000,
+    currency: 'Ks',
+    detail:
+      'White Elegant Long Sleeve Polyester Plain Bodycon Embellished Non-Stretch Spring/Summer Women Dresses',
+    image: require('../../assets/images/Bodycon.jpg'),
+    quantity: 1,
+  },
+  {
+    id: 14,
+    name: 'Crew neck T-shirt',
+    price: 110000,
+    currency: 'Ks',
+    detail:
+      'Shop the latest New Look crew neck t-shirt in black trends with ASOS! Free delivery and returns (Ts&Cs apply), order today!',
+    image: require('../../assets/images/crewNeck.jpg'),
+    quantity: 1,
+  },
+  {
+    id: 15,
+    name: 'Bomber Jacket with Colloar',
+    price: 280000,
+    currency: 'Ks',
+    detail:
+      'Browse online for the newest ASOS Bomber Jacket With Collar In Khaki styles',
+    image: require('../../assets/images/Bomber.jpg'),
+    quantity: 1,
+  },
+  {
+    id: 16,
+    name: 'Boho Sleveless Dress',
+    price: 170000,
+    currency: 'Ks',
+    detail:
+      'Baby Blue Boho Sleeveless Polyester Ditsy Floral Embellished Non-Stretch Summer Women Co-ords',
+    image: require('../../assets/images/floralDress.jpg'),
+    quantity: 1,
+  },
 ];
