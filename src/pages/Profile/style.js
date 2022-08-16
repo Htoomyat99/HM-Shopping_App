@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     borderColor: '#2FF500',
     borderBottomWidth: wp(0.2),
     height: wp(10),
-    width: wp(42),
+    width: wp(52),
     padding: wp(1),
   },
   submit: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     fontSize: wp(6),
     borderBottomWidth: wp(0.2),
     borderBottomColor: '#2FF500',
-    width: wp(40),
+    width: wp(55),
   },
   editText: {
     fontFamily: 'RobotoCondensed-Regular',
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
   },
   emailContainer: {
     marginTop: hp(1),
-    width: wp(42),
+    width: wp(55),
     marginRight: wp(10),
     marginBottom: hp(5),
   },

@@ -81,7 +81,7 @@ const Profile = ({navigation}) => {
           <View style={styles.modalContainer}>
             <TextInput
               placeholder="Add your name..."
-              style={styles.input}
+              style={{...styles.input, ...internalStyles.name}}
               value={name}
               onChangeText={value => getName(value)}
               placeholderTextColor={darkMode ? '#fff' : '#8e8e8e'}

@@ -56,6 +56,9 @@ const DashboardScreen = props => {
     SearchBarContainer: {
       borderColor: darkMode ? '#fff' : '#2FF500',
     },
+    searchBar: {
+      color: darkMode ? '#fff' : '#8e8e8e',
+    },
   });
 
   const renderProduct = ({item}) => {
@@ -93,7 +96,7 @@ const DashboardScreen = props => {
         />
         <TextInput
           placeholder={local.Search}
-          style={styles.searchBar}
+          style={{...styles.searchBar, ...internalStyles.searchBar}}
           placeholderTextColor={darkMode ? '#fff' : '#8e8e8e'}
           value={search}
           onChangeText={text => searchFilter(text)}

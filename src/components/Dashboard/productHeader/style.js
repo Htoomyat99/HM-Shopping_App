@@ -10,23 +10,21 @@ const styles = StyleSheet.create({
     width: wp(100),
     height: hp(48),
   },
-  image: {
-    width: wp(8),
-    height: wp(8),
-    borderRadius: 20,
-    marginLeft: wp(25),
-  },
   headerContainer: {
     backgroundColor: '#2FF500',
-    flexDirection: 'row',
+    flexDirection: 'row-reverse',
     alignItems: 'center',
+    justifyContent: 'flex-end',
     width: wp(100),
     height: hp(7.5),
+  },
+  image: {
+    marginLeft: wp(6),
   },
   headerText: {
     fontFamily: 'RobotoCondensed-Bold',
     fontSize: wp(4.5),
-    marginLeft: wp(35),
+    marginLeft: wp(27),
   },
   quoteText: {
     fontFamily: 'RobotoCondensed-Regular',

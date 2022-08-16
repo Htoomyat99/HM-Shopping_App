@@ -23,7 +23,7 @@ import {SliderData} from '../../../data/data';
 import BannerSlider from '../Slider/BannerSlider';
 
 //icons
-import SearchIcon from '../../../../assets/icons/SearchIcon';
+import MoreIcon from '../../../../assets/icons/MoreIcon';
 
 const ProductHeader = props => {
   const local = useLocal();
@@ -46,11 +46,12 @@ const ProductHeader = props => {
     <View style={{...styles.container, ...internalStyles.container}}>
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>HM_Shopping</Text>
-        <TouchableOpacity onPress={props.openDrawer}>
-          <Image
+        <TouchableOpacity onPress={props.openDrawer} style={styles.image}>
+          {/* <Image
             style={styles.image}
             source={require('../../../../assets/images/profileImg.jpg')}
-          />
+          /> */}
+          <MoreIcon width={wp(6)} height={wp(6)} Color="#000" />
         </TouchableOpacity>
       </View>
       <Text style={{...styles.quoteText, ...internalStyles.quoteText}}>

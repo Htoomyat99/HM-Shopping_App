@@ -110,7 +110,7 @@ const CustomDrawer = props => {
               style={styles.image}
               source={require('../../../assets/images/profileImg.jpg')}
             />
-            <Text style={styles.imageText}>{name ? name : ''}</Text>
+            <Text style={styles.imageText}>{name ? name : 'UserName'}</Text>
             <Text style={styles.imageText}>
               {userInfo ? userInfo.email : ''}
             </Text>
