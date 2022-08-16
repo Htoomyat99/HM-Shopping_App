@@ -20,7 +20,7 @@ const ProductDetail = ({navigation, route}) => {
 
   const favoriteHandler = value => {
     dispatch(actionFavorite.addFavorite(value));
-    ToastAndroid.show(local.SuccessAdd, ToastAndroid.SHORT);
+    ToastAndroid.show(local.FavoriteSuccess, ToastAndroid.SHORT);
   };
 
   return (

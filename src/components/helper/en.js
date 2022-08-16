@@ -50,4 +50,6 @@ export default {
   OrderNow: 'Order Now',
   NoFavorite: 'No Favorite',
   NoOrder: 'No Order',
+  FavoriteSuccess: 'Favorite Added',
+  RegisterText: `Don't have an account? Register First!`,
 };

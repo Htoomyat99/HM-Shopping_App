@@ -6,7 +6,6 @@ import {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: 'red',
     alignItems: 'center',
   },
   headerContainer: {

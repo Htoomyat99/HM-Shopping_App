@@ -19,6 +19,27 @@ const styles = StyleSheet.create({
     height: wp(28),
     borderRadius: wp(3),
   },
+  textContainer: {
+    marginLeft: wp(8),
+    marginTop: wp(6),
+  },
+  name: {
+    fontFamily: 'RobotoCondensed-Regular',
+    fontSize: wp(5),
+    letterSpacing: wp(0.1),
+    marginVertical: wp(1),
+  },
+  price: {
+    fontFamily: 'RobotoCondensed-Regular',
+    fontSize: wp(4.5),
+    letterSpacing: wp(0.1),
+    marginBottom: wp(3),
+  },
+  icon: {
+    position: 'absolute',
+    padding: wp(2),
+    right: 1,
+  },
 });
 
 export default styles;

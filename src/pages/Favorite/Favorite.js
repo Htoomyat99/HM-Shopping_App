@@ -4,23 +4,43 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 //components
 import FavoriteContent from '../../components/Favorite/FavoriteContent';
 import {AuthContext} from '../../context/context';
 import {useLocal} from '../../hook/useLocal';
+import * as actionFavorite from '../../store/action/favorite';
 
 //icons
 import FavoriteIcon from '../../../assets/icons/FavoriteIcon';
 
 const Favorite = () => {
+  const dispatch = useDispatch();
   const local = useLocal();
   const {darkMode} = useContext(AuthContext);
 
-  const cartList = useSelector(state => state.favoriteList.favorite);
+  const favoriteList = useSelector(state => {
+    let favoriteData = state.favoriteList.favoriteItem;
+    let updateFavoriteList = [];
+    for (const key in favoriteData) {
+      updateFavoriteList.push({
+        id: favoriteData[key].id,
+        quantity: favoriteData[key].quantity,
+        name: favoriteData[key].name,
+        currency: favoriteData[key].currency,
+        price: favoriteData[key].price,
+        image: favoriteData[key].image,
+      });
+    }
+    return updateFavoriteList;
+  });
 
-  if (cartList) {
+  const deleteHandler = value => {
+    dispatch(actionFavorite.removeFavorite(value));
+  };
+
+  if (favoriteList.length) {
     return (
       <View
         style={{
@@ -35,9 +55,9 @@ const Favorite = () => {
             color: darkMode ? '#fff' : '#000',
             marginTop: hp(3),
           }}>
-          {local.MyCart}
+          {local.Favorite}
         </Text>
-        <FavoriteContent data={cartList} />
+        <FavoriteContent data={favoriteList} deleteHandler={deleteHandler} />
       </View>
     );
   } else {

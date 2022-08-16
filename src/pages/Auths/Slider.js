@@ -123,7 +123,7 @@ const Slider = ({navigation}) => {
           },
         },
         {
-          backgroundColor: '#F1B1CB',
+          backgroundColor: '#91FF77',
           image: (
             <Image
               style={{width: wp(100), height: wp(100)}}

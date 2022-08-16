@@ -31,7 +31,7 @@ const Login = ({navigation}) => {
             ToastAndroid.show(local.ErrorText, ToastAndroid.SHORT);
           }
         } else {
-          ToastAndroid.show(local.ErrorText, ToastAndroid.SHORT);
+          ToastAndroid.show(local.RegisterText, ToastAndroid.SHORT);
         }
       } else {
         ToastAndroid.show(local.RequestText, ToastAndroid.SHORT);
