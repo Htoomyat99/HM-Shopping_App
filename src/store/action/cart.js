@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_FROM_CART} from '../type';
+import {ADD_TO_CART, MORE_CART, REMOVE_FROM_CART} from '../type';
 
 export const addToCart = data => {
   return {
@@ -11,5 +11,12 @@ export const removeCart = data => {
   return {
     type: REMOVE_FROM_CART,
     removeCart: data,
+  };
+};
+
+export const moreCart = data => {
+  return {
+    type: MORE_CART,
+    moreCart: data,
   };
 };

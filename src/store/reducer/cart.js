@@ -1,4 +1,4 @@
-import {ADD_TO_CART, REMOVE_FROM_CART} from '../type';
+import {ADD_TO_CART, MORE_CART, REMOVE_FROM_CART} from '../type';
 
 const initialState = {
   cartItems: {},
@@ -27,6 +27,30 @@ export default (state = initialState, action) => {
       }
       return {
         cartItems: updateCartItem,
+      };
+
+    case MORE_CART:
+      let moreCartid = action.moreCart.id;
+      let currQty = state.cartItems[moreCartid].quantity;
+      let updateQty = currQty + 1;
+      let updateMoreCartItem;
+
+      if (state.cartItems[moreCartid]) {
+        const newCart = {
+          id: moreCartid,
+          quantity: currQty + 1,
+          name: action.moreCart.name,
+          currency: action.moreCart.currency,
+          price: (action.moreCart.price / currQty) * updateQty,
+          image: action.moreCart.image,
+        };
+
+        updateMoreCartItem = {...state.cartItems, [moreCartid]: newCart};
+      } else {
+        updateMoreCartItem = {...state.cartItems, [cartid]: action.moreCart};
+      }
+      return {
+        cartItems: updateMoreCartItem,
       };
 
     case REMOVE_FROM_CART:

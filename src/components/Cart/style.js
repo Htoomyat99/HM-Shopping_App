@@ -62,6 +62,21 @@ const styles = StyleSheet.create({
     fontSize: wp(5),
     marginRight: wp(5),
   },
+  mainContainer: {
+    height: hp(80),
+  },
+  orderContainer: {
+    backgroundColor: '#2FF500',
+    position: 'absolute',
+    top: hp(73),
+    right: hp(0.5),
+    padding: hp(1.3),
+    borderRadius: hp(0.9),
+  },
+  orderText: {
+    fontFamily: 'RobotoCondensed-Bold',
+    fontSize: hp(2),
+  },
 });
 
 export default styles;

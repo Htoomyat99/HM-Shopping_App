@@ -37,7 +37,7 @@ const Cart = () => {
   });
 
   const addHandler = value => {
-    dispatch(actionCart.addToCart(value));
+    dispatch(actionCart.moreCart(value));
   };
 
   const minusHandler = data => {

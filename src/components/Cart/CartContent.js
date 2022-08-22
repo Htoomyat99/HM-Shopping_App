@@ -61,7 +61,7 @@ const CartContent = props => {
     );
   };
   return (
-    <View>
+    <View style={styles.mainContainer}>
       <FlatList
         data={props.data}
         renderItem={renderItem}
@@ -70,17 +70,8 @@ const CartContent = props => {
       />
       <TouchableOpacity
         onPress={props.OrderHandler}
-        style={{
-          backgroundColor: '#2FF500',
-          position: 'absolute',
-          top: hp(75),
-          right: hp(0.5),
-          padding: hp(1.3),
-          borderRadius: hp(0.9),
-        }}>
-        <Text style={{fontFamily: 'RobotoCondensed-Bold', fontSize: hp(2)}}>
-          {local.OrderNow}
-        </Text>
+        style={styles.orderContainer}>
+        <Text style={styles.orderText}>{local.OrderNow}</Text>
       </TouchableOpacity>
     </View>
   );

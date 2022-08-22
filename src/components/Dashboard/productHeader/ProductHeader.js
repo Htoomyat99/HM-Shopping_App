@@ -51,7 +51,7 @@ const ProductHeader = props => {
             style={styles.image}
             source={require('../../../../assets/images/profileImg.jpg')}
           /> */}
-          <MoreIcon width={wp(6)} height={wp(6)} Color="#000" />
+          <MoreIcon width={wp(5.5)} height={wp(5)} Color="#000" />
         </TouchableOpacity>
       </View>
       <Text style={{...styles.quoteText, ...internalStyles.quoteText}}>
